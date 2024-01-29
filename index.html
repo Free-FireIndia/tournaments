@@ -769,7 +769,7 @@ if (difference <= 0) {
 var nWeek = new Date(date);
 nWeek.setDate(date.getDate() + difference);
 
-var d1 = frDate.getDate()+"-"+(frDate.getMonth()+1)+"-"+frDate.getFullYear()+" To:- "+nWeek.getDate()+"-"+(nWeek.getMonth()+1)+"-"+nWeek.getFullYear();
+var d1 = frDate.getDate()+"-"+(frDate.getMonth()+1)+"-"+frDate.getFullYear()+" To: "+nWeek.getDate()+"-"+(nWeek.getMonth()+1)+"-"+nWeek.getFullYear();
 
 document.getElementsByClassName("date")[0].textContent = d1;
 document.getElementsByClassName("date")[1].textContent = d1;
