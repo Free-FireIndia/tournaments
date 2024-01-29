@@ -751,8 +751,11 @@ var gForm = document.getElementById("gForm");
 
 function setUp(){
 const date = new Date();
-d1 = (date.getDate()+4)+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
-d2 = (date.getDate()+6)+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+const fDate = new Date(date.setDate(date.getDate() + 4));
+const fDate1 = new Date(date.setDate(date.getDate() + 6));
+	
+d1 = fDate.getDate()+"-"+date.getMonth()+"-"+date.getFullYear();
+d2 = fDate1.getDate()+"-"+date.getMonth()+"-"+date.getFullYear();
 
 document.getElementsByClassName("date")[0].textContent = d1;
 document.getElementsByClassName("date")[1].textContent = d1;
