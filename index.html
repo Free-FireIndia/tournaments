@@ -730,7 +730,7 @@
   var smp = "N/A";
   var d1 = null;
   var d2 = null;
-  var dat = null;
+var date = new Date();
   
 buka.src = "https://5.top4top.net/m_13444g1we0.mp3";
 
@@ -750,7 +750,6 @@ var gForm = document.getElementById("gForm");
 
 
 function setUp(){
-var date = new Date();
 var dayOfWeek = date.getDay()+2;
 var difference = dayOfWeek - 1;
 
@@ -808,7 +807,6 @@ function firstPart(e,f,g){
 	document.getElementById("fb").style.display = "block";
 	rwd = f+"\ud83d\udc8e";
 	smp = e;
-	dat = g;
 	}
 }
 
@@ -853,7 +851,7 @@ function sendTur(e){
 	gLogs.style.display = "none";
 	changeTheme("#e1ae37");
 	document.getElementById("fb").style.display = "none";
-	document.getElementById("dat").innerText = "Game Date: "+dat;
+	document.getElementById("dat").innerText = "Game Date: "+date.getDate()+"-"+(date.getMonth()+1);
 	document.getElementById("rwd").innerText = "Rewards: "+rwd;
    document.getElementById("smp").innerText = "Selected Map: "+smp;
 }
