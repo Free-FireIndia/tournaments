@@ -750,16 +750,30 @@ var gForm = document.getElementById("gForm");
 
 
 function setUp(){
-const date = new Date();
-const fDate = new Date(date.setDate(date.getDate() + 4));
-const fDate1 = new Date(date.setDate(date.getDate() + 6));
-	
-d1 = fDate.getDate()+"-"+date.getMonth()+"-"+date.getFullYear();
-d2 = fDate1.getDate()+"-"+date.getMonth()+"-"+date.getFullYear();
+var date = new Date();
+var dayOfWeek = date.getDay()+2;
+var difference = dayOfWeek - 1;
+
+if (difference < 0) {
+  difference = 6;
+}
+
+var frDate = new Date(date);
+frDate.setDate(date.getDate() - difference);
+
+difference = 1 - date.getDay();
+if (difference <= 0) {
+  difference += 7;
+}
+
+var nWeek = new Date(date);
+nWeek.setDate(date.getDate() + difference);
+
+var d1 = frDate.getDate()+"-"+(frDate.getMonth()+1)+"-"+frDate.getFullYear()+" To:- "+nWeek.getDate()+"-"+(nWeek.getMonth()+1)+"-"+nWeek.getFullYear();
 
 document.getElementsByClassName("date")[0].textContent = d1;
 document.getElementsByClassName("date")[1].textContent = d1;
-document.getElementsByClassName("date")[2].textContent = d2;
+document.getElementsByClassName("date")[2].textContent = d1;
 }
 window.onload = (event) => {
 setUp();
